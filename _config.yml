@@ -91,7 +91,10 @@ title: "GCWeb Jekyll" # Site name or title
 
 plugins:
   - jekyll-last-modified-at
+  - jekyll-remote-theme
 
 # Optional. The default date format, used if none is specified in the tag.
 last-modified-at:
     date-format: '%d-%b-%y'
+
+remote_theme: https://github.com/wet-boew/gcweb-jekyll
