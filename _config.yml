@@ -22,10 +22,7 @@ exclude:
 - gcweb-jekyll.gemspec
 - .jekyll-cache
 - node_modules
-- vendor/bundle/
-- vendor/cache/
-- vendor/gems/
-- vendor/ruby/
+- vendor/
 
 # 2. Installed Gems
 
@@ -41,7 +38,6 @@ compress_html:
   profile: false
 quiet: false
 timezone: America/Toronto # Timezone for blog posts and alike
-themeJS: true
 verbose: false
 
 # 5. Collections
@@ -60,135 +56,22 @@ collections:
 
 # 7. Site settings
 analytics_adobe: ""
-analytics_google: ""
-analytics_google_anonymize_ip: ""
 assets: "https://wet-boew.github.io/themes-dist/GCWeb"
-url: "https://ssclaunchpad.github.io"
-baseurl: "/"
-css_inline: false # Will insert all styles into a single <style> block in the <head> element and remove the style <link> reference
+baseurl: ""
 description:
   en: "Jekyll variant for GCWeb theme" # English site description and default description
   fr: "Adaption Jekyll du theme GCWeb" # French site description and default description
 
 defaults:
-  - scope:
+  -
+    scope:
       path: ""
       type: pages
     values:
-      footer: true
-      no_header: false
-      i18n:
-        # Some of these are used for a11y stuff, e.g. not *visible* but still req'd.
-        # To remove, search the entire source tree to confirm it's unused before removal.
-        tmpl-cet-name:
-          #en: Science Cloud Experimentation Program
-          #fr: Programme d'expérimentation en science infonuagique
-          en: Science Program
-          fr: Programme science
-        tmpl-cet-name-abbr:
-          en: Sp
-          fr: Ps
-        tmpl-about-government:
-          en: About government
-          fr: Au sujet du gouvernement
-        tmpl-about-site:
-          en: About this site
-          fr: À propos de ce site
-        tmpl-accountsettings:
-          en: Account settings
-          fr: Paramètres du compte
-        tmpl-archive-paragraph:
-          en: You can use it for research or reference.
-          fr: ous pouvez la consulter à des fins de recherche ou à titre de référence.
-        tmpl-archive-title:
-          en: We have archived this page and will not be updating it.,
-          fr: Nous avons archivé cette page et elle ne sera plus mise à jour.
-        tmpl-arms-description:
-          en: We are a federal institution that is part of the [portfolio name] portfolio. We operate at arm’s length from the Government of Canada.
-          fr: Nous sommes une institution fédérale qui fait partie du portefeuille de [nom du portefeuille]. Nous fonctionnons sans lien de dépendance avec le gouvernement.
-        tmpl-arms-image-alt:
-          en: Department name
-          fr: Nom du département
-        tmpl-date-mod:
-          en: Date modified
-          fr: Date de modification&#160;
-        tmpl-de-description:
-          en: Brief description of the feature being promoted.
-          fr: Brève description de l’élément en vedette.
-        tmpl-de-title:
-          en: Features
-          fr: En vedette
-        tmpl-de-title-link:
-          en: "[Feature hyperlink text]"
-          fr: "[Texte du lien à l’élément en vedette]"
-        tmpl-feedback:
-          en: Report a problem on this page
-          fr: Signaler un problème sur cette page
-        tmpl-gc-sig:
-          en: Government of Canada
-          fr: Gouvernement du Canada
-        tmpl-ssc-logo-alt:
-          en: Logo of Shared Services Canada
-          fr: Logo de Services Partagés du Canada
-        tmpl-home:
-          en: Home
-          fr: Accueil
-        tmpl-lang-dir:
-          en: ltr
-          fr: ltr
-        tmpl-lang-native:
-          en: English
-          fr: Français
-        tmpl-lang-select:
-          en: Language selection
-          fr: Sélection de la langue
-        tmpl-menu-footer-about-contact-text:
-          en: Contact us
-          fr: Contactez-nous
-        tmpl-menu-footer-about-contact-link:
-          en: https://www.canada.ca/en/contact.html
-          fr: https://www.canada.ca/fr/contact.html
-        tmpl-menu-footer-communications-terms-text:
-          en: Terms and conditions
-          fr: Avis
-        tmpl-menu-footer-communications-terms-link:
-          en: https://www.canada.ca/en/transparency/terms.html
-          fr: https://www.canada.ca/fr/transparence/avis.html
-        tmpl-menu-footer-communications-privacy-text:
-          en: Privacy
-          fr: Confidentialité
-        tmpl-menu-footer-communications-privacy-link:
-          en: https://www.canada.ca/en/transparency/privacy.html
-          fr: https://www.canada.ca/fr/transparence/confidentialite.html
-        tmpl-skip-about-site:
-          en: Skip to About this site
-          fr: Passer à «&#160;À propos de ce site&#160;»
-        tmpl-skip-cont:
-          en: Skip to main content
-          fr: Passer au contenu principal
-        tmpl-skip-section:
-          en: Skip to section menu
-          fr: Passer au menu de la section
-        tmpl-space:
-          en: "&#32;"
-          fr: "&#32;"
-        tmpl-terms:
-          en: Terms and conditions
-          fr: Avis
-        tmpl-toppage:
-          en: Top of Page
-          fr: Haut de la page
-        tmpl-you-are-here:
-          en: You are here
-          fr: Vous êtes ici&#160;
-      layout: "page"
-      javascripts:
-      langtoggle: true
-      noMainContainer: false
-      share: false
+      layout: default
+      share: true
       sitemenu: true
-      sitesearch: false
-      stylesheets:
+      sitesearch: true
   # These two setup the lang to be automagically set per the page location
   - scope:
       path: "_pages/en"
@@ -198,64 +81,17 @@ defaults:
       path: "_pages/fr"
     values:
       lang: "fr"
-banner_alerts:
-  - "beta_banner.html" # relative to _includes/
-headermenu:
-  en:
-    - cloud-experimentation
-    - federal-science-datahub
-    - federal-open-science-repository-of-canada
-  fr:
-    - experimentation-infonuagique
-    - datahub-scientifique-federal
-    - depot-federal-de-science-ouverte-du-canada
-
-# Drives index & about us lists
-solutions:
-  en:
-    - cloud-experimentation
-    - federal-science-datahub
-    - federal-open-science-repository-of-canada
-    #- laboratories-canada
-  fr:
-    - experimentation-infonuagique
-    - datahub-scientifique-federal
-    - depot-federal-de-science-ouverte-du-canada
-
-footermenu:
-  en:
-    - heading: "About us"
-      links: 
-        - about-the-science-program
-        #- about-scie
-    - heading: "Our solutions"
-      links:
-        - cloud-experimentation
-        - federal-science-datahub
-        - federal-open-science-repository-of-canada
-  fr:
-    - heading: "À propos de nous"
-      links: 
-        - a-propos-de-le-programme-scientifique
-        #- a-propos-du-isie
-    - heading: "Nos solutions"
-      links:
-        - experimentation-infonuagique
-        - datahub-scientifique-federal
-        - depot-federal-de-science-ouverte-du-canada
 
 encoding: utf-8 # Make sure the encoding is right
 email: "scienceai-iascience@ssc-spc.gc.ca"
 repo: "https://github.com/wet-boew/gcweb-jekyll"
-# service_worker: false # Will turn off the service worker if set to false
-stylesheets:
-  - href: "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    # Note to self: was causing a CORS error, probably just need to get an updated integrity hash
-    #integrity: "sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    #crossorigin: "anonymous"
-  - href: "assets/css/gh-code-highlight.css" # Hacky way to include the GH Rouge code highlighting theme. Required for code formatting.
-  - href: "assets/css/style.css"
-javascripts:
-  - src: "assets/js/menu.js"
-theme-name: GCWeb
-title: "gcweb-jekyll" # Site name or title
+
+theme: gcweb-jekyll
+title: "GCWeb Jekyll" # Site name or title
+
+plugins:
+  - jekyll-last-modified-at
+
+# Optional. The default date format, used if none is specified in the tag.
+last-modified-at:
+    date-format: '%d-%b-%y'

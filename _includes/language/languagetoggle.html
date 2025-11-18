@@ -1,0 +1,16 @@
+<section id="wb-lng" class="col-xs-3 col-sm-12 pull-right text-right">
+	<h2 class="wb-inv">{{ i18nText-language }}</h2>
+	<ul class="list-inline mrgn-bttm-0">
+		<li>
+			<!-- <a lang="{{ altlang }}" hreflang="{{ altlang }}" href="/{{ altlang }}/{{ page.altLangPrefix }}.html">
+								<span class="hidden-xs">{{ page.i18n.tmpl-lang-native[altlang] }}</span>
+								<abbr title="{{ page.i18n.tmpl-lang-native['altlang'] }}"
+									class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase">{{ altlang }}</abbr>
+							</a> -->
+			<a lang="{{ i18nText-altLang }}" hreflang="{{ i18nText-altLang }}" href="/{{ i18nText-altLang }}/{{ page.altLangPrefix }}.html">
+				<span class="hidden-xs" translate="no">{{ i18nText-altLanguage }}</span>
+				<abbr title="{{ i18nText-altLanguage }}" translate="no" class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase">{{ i18nText-altLang }}</abbr>
+			</a>
+		</li>
+	</ul>
+</section>
