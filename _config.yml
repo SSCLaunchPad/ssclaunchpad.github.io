@@ -56,11 +56,8 @@ collections:
 
 # 7. Site settings
 analytics_adobe: ""
-assets: "https://wet-boew.github.io/themes-dist/GCWeb"
+#assets: "https://wet-boew.github.io/themes-dist/GCWeb"
 baseurl: ""
-description:
-  en: "Jekyll variant for GCWeb theme" # English site description and default description
-  fr: "Adaption Jekyll du theme GCWeb" # French site description and default description
 
 defaults:
   - scope:
@@ -69,22 +66,40 @@ defaults:
     values:
       layout: default
       share: true
+      nomenu: true
   # These two setup the lang to be automagically set per the page location
   - scope:
       path: "_pages/en"
     values:
-      lang: "en"    
+      lang: "en"
+      creator: Shared Services Canada
   - scope:
       path: "_pages/fr"
     values:
       lang: "fr"
+      creator: Services partagés Canada
+  # These two setup the section and breadcrumbs for the tutorials pages
+  - scope:
+      path: "_pages/en/tutorials"
+    values:
+      section: tutorials
+      breadcrumbs:
+        - title: Tutorials
+          link: /en/tutorials/
+  - scope:
+      path: "_pages/fr/tutoriels"
+    values:
+      section: tutorials
+      breadcrumbs:
+        - title: Tutoriels
+          link: /fr/tutoriels/
 
 encoding: utf-8 # Make sure the encoding is right
 email: "scienceai-iascience@ssc-spc.gc.ca"
 #repo: "https://github.com/wet-boew/gcweb-jekyll"
 
 #theme: gcweb-jekyll
-title: "GCWeb Jekyll" # Site name or title
+#title: "GCWeb Jekyll" # Site name or title
 
 plugins:
   - jekyll-last-modified-at
