@@ -97,6 +97,7 @@ defaults:
 encoding: utf-8 # Make sure the encoding is right
 email: "scienceai-iascience@ssc-spc.gc.ca"
 #repo: "https://github.com/wet-boew/gcweb-jekyll"
+repository: SSCLaunchPad/ssclaunchpad.github.io
 
 #theme: gcweb-jekyll
 #title: "GCWeb Jekyll" # Site name or title
