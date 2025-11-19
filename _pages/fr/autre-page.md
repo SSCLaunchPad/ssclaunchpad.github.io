@@ -1,14 +1,6 @@
 ---
 altLangPrefix: another-page
-dateModified: 2020-01-08
-description: 
-  fr: Ceci est juste une autre page
-footer: true
-langtoggle: true
-lang: fr
-noMainContainer: false
-sitemenu: true
-sitesearch: true
+description: Ceci est juste une autre page
 title: Autre page
 ---
 
@@ -17,3 +9,4 @@ title: Autre page
 _Yé_
 
 [retour](./)
+

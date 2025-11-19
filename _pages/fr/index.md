@@ -1,138 +1,45 @@
 ---
 altLangPrefix: index
-authorName: Service Canada
-authorUrl:
-contentTitle: Canada.ca Jekyll theme
-description:
-  en: "Get quick, easy access to all Government of Canada services and information."
-  fr: "Accédez rapidement et facilement à tous les services et renseignements du gouvernement du Canada."
-lang: fr
-#layout: page
-layout: default
-noContentTitle: true
+contentTitle: Page test de theme Jekyll
+description: Accédez rapidement et facilement à tous les services et renseignements du gouvernement du Canada.
 pageclass: wb-prettify all-pre
-subject:
-  en: [GV Government and Politics, Government services]
-  fr: [GV Gouvernement et vie politique, Services gouvernementaux]
-title: Page Test
+subject: [Gouvernement et vie politique, Services gouvernementaux]
+title: Rampe de Lancement
+skipPageBreadcrumb: true
 ---
 
-# {{ page.contentTitle }}
+### Solutions de pointe pour propulser votre expérimentation!
 
-Il s'agit d'un paragraphe normal suivant un en-tête. GitHub est une plateforme d'hébergement de code pour le contrôle de version et la collaboration. Il vous permet, ainsi qu'à d'autres, de travailler ensemble sur des projets de n'importe où.
+SIUGC Rampe de Lacement priorise les besoins d'innovation et d'experimentation avec:
 
-Le texte peut être **gras**, _italique_ ou ~~barré~~.
+* Une infrastructure informatique en nuage de classe mondiale et des outils
+* Évolutivité et puissance de calcul avancée.
+* Approvisionnement rapide et sans heurt.
+* Autonomie informatique dans un environnement bac à sable sécurisé
+* Conseils d'experts et accompagnement
 
-[Lien vers une autre page](./autre-page.html).
+### Un ensemble puissant de plateformes et d'outils conçus pour vos besoins d'expérimentation :
+* Plongez-vous dans un parcours expérimental de 3 à 9 mois avec des plateformes de cloud de premier plan telles qu'Azure, AWS ou GCP.
+* Évaluez et débloquez des solutions cloud de pointe conçues pour résoudre vos défis scientifiques.
+* Bénéficiez de l'accès à nos experts en la matière qui fournissent des conseils personnalisés et un soutien, en s'assurant que vos expériences et preuves de concept sont optimisées pour le succès.
+* Collaborez n'importe où, avec n'importe qui, à tout moment sur une plateforme du GC qui permet aux scientifiques fédéraux, aux chercheurs et aux parties prenantes externes de travailler ensemble au-delà des frontières départementales.
 
-Il devrait y avoir un espace entre les paragraphes.
+### Tutoriels
+<div class="row wb-eqht">
+  {% for page in site.pages  %}
+    {% if page.path contains "/tutoriels/" and page.draft != true %}
+        {% include _custom/tutorials.html %}
+    {% endif %}
+  {% endfor %}
+</div>
 
-Il devrait y avoir un espace entre les paragraphes. Nous vous recommandons d'inclure un fichier README ou un fichier contenant des informations sur votre projet.
+### Ce que nos clients disent à propos de la Rampe de Lacement
+<blockquote>
+  <p>Notre expérimentation avec SCIE a été un grand succès. Avoir un accès rapide et réactif aux ressources informatiques en nuage avec une équipe dédiée pour nous aider à optimiser notre déploiement et fournir des conseils et un accompagnement a grandement accéléré notre capacité à réaliser nos objectifs prévus.</p>
+  <footer>ACIA</footer>
+</blockquote>
 
-## En-tête 2
-
-> Il s'agit d'une citation suivant un en-tête.
->
-> Lorsque quelque chose est suffisamment important, vous le faites même si les chances ne sont pas en votre faveur.
-
-### En-tête 3
-
-```js
-// Code Javascript avec coloration syntaxique.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Code Ruby avec coloration syntaxique
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### En-tête 4
-
-* Il s'agit d'une liste non ordonnée suivant un en-tête.
-* Il s'agit d'une liste non ordonnée suivant un en-tête.
-* Il s'agit d'une liste non ordonnée suivant un en-tête.
-
-##### En-tête 5
-
-1. Il s'agit d'une liste ordonnée suivant un en-tête.
-2. Il s'agit d'une liste ordonnée suivant un en-tête.
-3. Il s'agit d'une liste ordonnée suivant un en-tête.
-
-###### En-tête 6
-
-| head1           | tête deux         | trois |
-|:----------------|:------------------|:------|
-| ok            | bon poisson suédois | sympa |
-| en rupture de stock | bon et plein  | sympa |
-| ok              | bon `oreos`       | hmm   |
-| ok           | bonne goutte `zoute` | miam  |
-
-### Il y a une ligne horizontale en dessous.
-
-* * *
-
-### Voici une liste non ordonnée:
-
-* Objet foo
-* Barre d'articles
-* Article baz
-* Article zip
-
-### Et une liste ordonnée:
-
-1. Point un
-1. Point deux
-1. Point trois
-1. Point quatre
-
-### Et une liste imbriquée:
-
-- élément de niveau 1
-   - objet de niveau 2
-   - objet de niveau 2
-     - objet de niveau 3
-     - objet de niveau 3
-- élément de niveau 1
-   - objet de niveau 2
-   - objet de niveau 2
-   - objet de niveau 2
-- élément de niveau 1
-   - objet de niveau 2
-   - objet de niveau 2
-- élément de niveau 1
-
-### Petite image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Grande image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png){: .img-responsive}
-
-
-### Les listes de définitions peuvent être utilisées avec la syntaxe HTML.
-
-<dl>
-<dt>Nom</dt>
-<dd>Godzilla</dd>
-<dt>Né</dt>
-<dd>1952</dd>
-<dt>Lieu de naissance</dt>
-<dd>Japon</dd>
-<dt>Couleur</dt>
-<dd>Vert</dd>
-</dl>
-
-```
-Les longs blocs de code sur une seule ligne ne doivent pas être bouclés. Ils doivent défiler horizontalement s'ils sont trop longs. Cette ligne doit être suffisamment longue pour le démontrer.
-```
-
-```
-Le dernier élément.
-```
+<blockquote>
+  <p>Le soutien fourni par l'équipe Science de la SSC a été fantastique. Réponses rapides, très compétents et d'excellentes explications.</p>
+  <footer>SC</footer>
+</blockquote>

@@ -1,14 +1,6 @@
 ---
 altLangPrefix: autre-page
-dateModified: 2020-01-08
-description: 
-  en: This is just another page
-footer: true
-langtoggle: true
-lang: en
-noMainContainer: false
-sitemenu: true
-sitesearch: true
+description: This is just another page
 title: Another page
 ---
 

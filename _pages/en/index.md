@@ -1,135 +1,46 @@
 ---
 altLangPrefix: index
-authorName: Service Canada
-authorUrl:
-contentTitle: Canada.ca Jekyll theme
-dateModified: 2020-01-10
-description:
-  en: "Get quick, easy access to all Government of Canada services and information."
-  fr: "Accédez rapidement et facilement à tous les services et renseignements du gouvernement du Canada."
-noContentTitle: true
+contentTitle: Home
+description: Get quick, easy access to all Government of Canada services and information.
 pageclass: wb-prettify all-pre
-subject:
-  en: [GV Government and Politics, Government services]
-  fr: [GV Gouvernement et vie politique, Services gouvernementaux]
-title: Test page
+title: LaunchPad
+skipPageBreadcrumb: true
 ---
-# {{ page.contentTitle }}
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+### Cutting-edge solutions to propel your experimentation
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+GCCO LaunchPad prioritizes innovation and experimentation with:
 
-[Link to another page](./another-page.html).
-
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png){: .img-responsive}
+* World-class cloud computing infrastructure and tools
+* Scalability and advanced computing power.
+* Seamless and rapid provisioning.
+* IT autonomy in a secure sandbox environment
+* Expert advice and guidance
 
 
-### Definition lists can be used with HTML syntax.
+### A powerful set of platforms and tools designed for your experimentation needs:
+* Immerse yourself in a 3-9 month experimental journey with leading cloud platforms like Azure, AWS, or GCP. 
+* Evaluate and unlock cutting-edge cloud solutions tailored to solve your scientific challenges. 
+* Benefit from access to our subject matter experts who provide tailored guidance and support, ensuring that your experiments and proofs of concept are optimized for success.
+* Collaborate anywhere, with anyone, anytime on a GC platform that allows federal scientists, researchers, and external stakeholders to work together across departmental boundaries.
 
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
+### Tutorials
+<div class="row wb-eqht">
+  {% for page in site.pages  %}
+    {% if page.path contains "/tutorials/" and page.draft != true %}
+        {% include _custom/tutorials.html %}
+    {% endif %}
+  {% endfor %}
+</div>
 
-```
-The final element.
-```
+### What our clients are saying about LaunchPad
+<blockquote>
+  <p>Our experimentation with LaunchPad has been a great success. Having quick and responsive access to cloud computing resources with a dedicated team to help us optimize our deployment and provide advice and guidance greatly accelerated our ability to accomplish our intended objectives.</p>
+  <footer>CFIA</footer>
+</blockquote>
+
+<blockquote>
+  <p>Support provided by the LaunchPad team was fantastic. Fast responses, very knowledgeable and great explanations.</p>
+  <footer>HC</footer>
+</blockquote>
