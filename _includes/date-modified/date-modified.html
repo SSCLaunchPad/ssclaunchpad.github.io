@@ -1,4 +1,4 @@
 <dl id="wb-dtmd">
 	<dt>{{ i18nText-dateModified }}</dt>
-	<dd><time property="dateModified">{% if page.dateModified %}{{ page.dateModified }}{% else %}{% last_modified_at %}{% endif %}</time></dd>
+	<dd><time property="dateModified">{% if page.dateModified %}{{ page.dateModified }}{% else %}{% page.last_modified_at %}{% endif %}</time></dd>
 </dl>
