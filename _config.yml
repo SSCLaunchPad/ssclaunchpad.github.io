@@ -63,15 +63,12 @@ description:
   fr: "Adaption Jekyll du theme GCWeb" # French site description and default description
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: pages
     values:
       layout: default
       share: true
-      sitemenu: true
-      sitesearch: true
   # These two setup the lang to be automagically set per the page location
   - scope:
       path: "_pages/en"
@@ -95,6 +92,27 @@ plugins:
 
 # Optional. The default date format, used if none is specified in the tag.
 last-modified-at:
-    date-format: '%d-%b-%y'
+    date-format: '%Y-%m-%d'
 
 remote_theme: https://github.com/wet-boew/gcweb-jekyll
+
+global:
+  breadcrumbs:
+    en:
+      - title: "SSC"
+        link: "https://www.canada.ca/en/shared-services.html"
+      - title: "GC Cloud One"
+        link: "https://hosting-services-hebergement.canada.ca/s/cloud-services?language=en_US"
+      - title: "LaunchPad"
+        link: "https://hosting-services-hebergement.canada.ca/s/gc-cloud-one-launchpad?language=en_US"
+      - title: "HOME"
+        link: "/en/"
+    fr:
+      - title: "SPC"
+        link: "https://www.canada.ca/fr/services-partages.html"
+      - title: "Service infonuagique unifié du GC"
+        link: "https://hosting-services-hebergement.canada.ca/s/cloud-services?language=fr"
+      - title: "Rampe de lancement"
+        link: "https://hosting-services-hebergement.canada.ca/s/gc-cloud-one-launchpad?language=fr"
+      - title: "ACCUEIL"
+        link: "/fr/"
