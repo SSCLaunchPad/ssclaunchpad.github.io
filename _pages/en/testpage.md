@@ -13,8 +13,8 @@ title: TEST
   {% endfor %}
 </ul> -->
 
-{% assign latest = site.pages %}
+{% assign latest = site.pages | sort: "gadfasdf" | slice: 0, 5  %}
 
 {% for p in latest %}
-  <p><a href="{{ p.url }}">{{ p.title }}</a>{{ p.last_modified_at }}</p>
+  <p><a href="{{ p.url }}">{{ p.title }}</a>;{{ p.path }}; {{ p.last_modified_at }}</p>
 {% endfor %}

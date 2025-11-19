@@ -105,6 +105,7 @@ repository: SSCLaunchPad/ssclaunchpad.github.io
 plugins:
   - jekyll-last-modified-at
   - jekyll-remote-theme
+  - recents
 
 # Optional. The default date format, used if none is specified in the tag.
 last-modified-at:

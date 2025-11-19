@@ -12,7 +12,7 @@
   subject:
     en: Government of Canada, services
     fr: Gouvernement du Canada, services
-  title: Canada.ca
+  title: SPLASH
 ---
 
 <div class="row">
