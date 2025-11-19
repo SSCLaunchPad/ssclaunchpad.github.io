@@ -7,10 +7,16 @@
 ++++++++++++++++++++++++++++++++++
 
 {%- endcomment -%}
+{%- assign setting-resourcesBasePathTheme = "/assets/GCWeb/GCWeb" -%}
+{%- assign setting-resourcesBasePathWetboew = "/assets/GCWeb/wet-boew" -%}
+{%- assign setting-siteBasePath = "/assets/GCWeb" -%} 
+
+{% comment %} 
 {%- assign setting-packageName = "GCWeb" -%}
-{%- capture setting-resourcesBasePathTheme -%}
-	https://wet-boew.github.io/themes-dist/GCWeb/{{ setting-packageName }}
+{%- capture setting-resourcesBasePathTheme -%}https://wet-boew.github.io/themes-dist/GCWeb/{{ setting-packageName }}
 {%- endcapture -%}
 {%- assign setting-resourcesBasePathWetboew = "https://wet-boew.github.io/themes-dist/GCWeb/wet-boew" -%}
 {%- assign setting-siteBasePath = "https://wet-boew.github.io/GCWeb/" -%}
-{%- assign setting-demosBasePath = "https://wet-boew.github.io/gcweb-compiled-demos/" -%}
+
+
+{% endcomment %}
