@@ -17,8 +17,6 @@ exclude:
 - SECURITY.md
 - CNAME
 - "*.tmp"
-- Gemfile
-- gcweb-jekyll.gemspec
 - Gemfile.lock
 - git_pre-commit
 - .jekyll-cache
