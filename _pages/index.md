@@ -1,18 +1,17 @@
 ---
-  contentTitle: Canada.ca
-  creator:
-    en: Government of Canada, Shared Services Canada
-    fr: Gouvernement du Canada, Services Partages Canada
-  description:
-    en: The Government of Canada website is a single point of access to all programs, services, departments, ministries and organizations of the Government of Canada.
-    fr: Le site Web du gouvernement du Canada fournit un point d'accès complet à tous les programmes, services, départements, ministères et organismes du gouvernement du Canada.
-  layout: splashpage
-  pageclass: splash
-  permalink: /
-  subject:
-    en: Government of Canada, services
-    fr: Gouvernement du Canada, services
-  title: SPLASH
+contentTitle: Canada.ca
+creator: Government of Canada, Shared Services Canada | Gouvernement du Canada, Services Partages Canada
+description:
+  en: The Government of Canada website is a single point of access to all programs, services, departments, ministries and organizations of the Government of Canada.
+  fr: Le site Web du gouvernement du Canada fournit un point d'accès complet à tous les programmes, services, départements, ministères et organismes du gouvernement du Canada.
+layout: splashpage
+pageclass: splash
+permalink: /
+subject:
+  en: Government of Canada, services
+  fr: Gouvernement du Canada, services
+title: SPLASH
+last_updated: 2025-11-26T19:59:06Z
 ---
 
 <div class="row">
