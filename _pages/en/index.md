@@ -5,6 +5,7 @@ description: Get quick, easy access to all Government of Canada services and inf
 pageclass: wb-prettify all-pre
 title: LaunchPad
 skipPageBreadcrumb: true
+last_updated: 2025-11-26T21:43:11Z
 ---
 
 ### Cutting-edge solutions to propel your experimentation
@@ -17,13 +18,11 @@ GCCO LaunchPad prioritizes innovation and experimentation with:
 * IT autonomy in a secure sandbox environment
 * Expert advice and guidance
 
-
 ### A powerful set of platforms and tools designed for your experimentation needs:
 * Immerse yourself in a 3-9 month experimental journey with leading cloud platforms like Azure, AWS, or GCP. 
 * Evaluate and unlock cutting-edge cloud solutions tailored to solve your scientific challenges. 
 * Benefit from access to our subject matter experts who provide tailored guidance and support, ensuring that your experiments and proofs of concept are optimized for success.
 * Collaborate anywhere, with anyone, anytime on a GC platform that allows federal scientists, researchers, and external stakeholders to work together across departmental boundaries.
-
 
 ### Tutorials
 <div class="row wb-eqht">

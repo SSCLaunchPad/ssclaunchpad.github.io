@@ -2,7 +2,7 @@
 altLangPrefix: testpage
 description: Testing things out
 title: TEST
-last_updated: 2025-11-26T19:59:06Z
+last_updated: 2025-11-26T21:43:11Z
 ---
 
 <!-- <ul>
@@ -17,5 +17,5 @@ last_updated: 2025-11-26T19:59:06Z
 {% assign latest = site.pages | sort: "last_updated" | reverse %}
 
 {% for p in latest %}
-  <p><a href="{{ p.url }}">{{ p.title }}</a>;{{ p.path }}; {{ p.last_modified_at }}</p>
+  <p><a href="{{ p.url }}">{{ p.title }}</a>;{{ p.path }}; {{ p.last_updated | date: "%s"  }}; {{ p.last_updated }}</p>
 {% endfor %}
