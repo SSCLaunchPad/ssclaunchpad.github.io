@@ -1,0 +1,54 @@
+#!/bin/bash
+
+set -e  # Exit on any error
+
+# Get the current timestamp in ISO 8601 format
+CURRENT_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+# Function to update or insert 'last_updated' front matter in a file
+update_last_updated_front_matter() {
+  local file=$1
+
+  # Check if the file contains front matter (lines that start and end with "---")
+  if grep -q "^---" "$file"; then
+    YAML_DELIMITER_COUNT=$(grep -c "^---" "$file")
+    # Ensure the file has both opening and closing delimiters for front matter
+    if [[ $YAML_DELIMITER_COUNT -ge 2 ]]; then
+      # Check if 'last_updated' key exists in the front matter
+      if grep -q "^last_updated:" "$file"; then
+        # Update the existing 'last_updated' field with the current date
+        sed -i '' -E "s/^last_updated: .*/last_updated: $CURRENT_DATE/" "$file"
+      else
+        # Insert 'last_updated' just before the closing "---"
+        awk -v date="$CURRENT_DATE" '
+          BEGIN { inside_front_matter = 0 }
+          # Detect the start of the front matter
+          /^---$/ && !inside_front_matter { inside_front_matter = 1; print; next }
+          # Detect the end of the front matter
+          /^---$/ && inside_front_matter {
+            print "last_updated: " date
+            inside_front_matter = 0
+          }
+          { print }
+        ' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+      fi
+    else
+      echo "Skipping file with incomplete front matter: $file"
+    fi
+  else
+    echo "Skipping file without YAML front matter: $file"
+  fi
+}
+
+# Process only files staged for commit that are .md or .html
+for file in $(git diff --cached --name-only --diff-filter=ACM | grep -E '\.md$|\.html$'); do
+  # Only process if the file exists
+  if [[ -f $file ]]; then
+    update_last_updated_front_matter "$file"
+
+    # Re-add the updated file to the staging area
+    git add "$file"
+  fi
+done
+
+exit 0

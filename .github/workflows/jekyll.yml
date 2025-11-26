@@ -8,8 +8,8 @@ name: Deploy Jekyll site to Pages
 
 on:
   # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+  # push:
+  #   branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -40,7 +40,32 @@ jobs:
           ruby-version: '3.1' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
-          
+      
+      # - name: Update 'last_modified_at' Front Matter
+      #   run: |
+      #     #!/usr/bin/bash
+      #     for file in $(git diff --name-only HEAD~1 | grep '^_pages/.*\.md$'); do
+      #         if head -n 1 "$file" | grep -q -- '---'; then
+      #             if grep -q 'last_modified:' "$file"; then
+      #                 sed -i "/^last_modified:/c\last_modified: $(date -u +%Y-%m-%dT%H:%M:%SZ)" "$file"
+      #             else
+      #                 sed -i "/^---$/i last_modified: $(date -u +%Y-%m-%dT%H:%M:%SZ)" "$file"
+      #             fi
+      #         fi
+      #     done
+      #   shell: bash
+
+      # - name: Commit and Push Changes
+      #   if: success()
+      #   run: |
+      #     git config user.name "GitHub Actions"
+      #     git config user.email "actions@github.com"
+      #     git add _pages/*.md
+      #     git commit -m "Update last_modified field in front matter"
+      #     git push
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
