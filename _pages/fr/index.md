@@ -7,7 +7,7 @@ subject: [Gouvernement et vie politique, Services gouvernementaux]
 title: Rampe de Lancement
 skipPageBreadcrumb: true
 #draft: false
-last_updated: 2025-11-28T21:49:56Z
+last_updated: 2025-11-28T22:19:21Z
 ---
 
 ### Solutions de pointe pour propulser votre expérimentation!
@@ -28,10 +28,9 @@ SIUGC Rampe de Lacement priorise les besoins d'innovation et d'experimentation a
 
 ### Tutoriels
 <div class="row wb-eqht">
-  {% for page in site.pages  %}
-    {% if page.path contains "/tutoriels/" and page.draft != true %}
-        {% include _custom/tutorials.html %}
-    {% endif %}
+  {% assign latest = site.pages | where: "section", "tutorials" | where: "lang", "fr" | where: "draft", false | sort: "last_updated" | reverse %}
+  {% for page in latest  %}
+    {% include _custom/tutorials.html %}
   {% endfor %}
 </div>
 

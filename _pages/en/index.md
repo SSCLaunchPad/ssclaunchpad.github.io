@@ -5,7 +5,7 @@ description: Get quick, easy access to all Government of Canada services and inf
 pageclass: wb-prettify all-pre
 title: LaunchPad
 skipPageBreadcrumb: true
-last_updated: 2025-11-26T21:43:11Z
+last_updated: 2025-11-28T22:19:21Z
 ---
 
 ### Cutting-edge solutions to propel your experimentation
@@ -26,10 +26,9 @@ GCCO LaunchPad prioritizes innovation and experimentation with:
 
 ### Tutorials
 <div class="row wb-eqht">
-  {% for page in site.pages  %}
-    {% if page.path contains "/tutorials/" and page.draft != true %}
-        {% include _custom/tutorials.html %}
-    {% endif %}
+  {% assign latest = site.pages | where: "section", "tutorials" | where: "lang", "en" | where: "draft", false | sort: "last_updated" | reverse %}
+  {% for page in latest  %}
+    {% include _custom/tutorials.html %}
   {% endfor %}
 </div>
 
