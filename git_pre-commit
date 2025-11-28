@@ -17,7 +17,7 @@ update_last_updated_front_matter() {
       # Check if 'last_updated' key exists in the front matter
       if grep -q "^last_updated:" "$file"; then
         # Update the existing 'last_updated' field with the current date
-        sed -i '' -E "s/^last_updated: .*/last_updated: $CURRENT_DATE/" "$file"
+        sed -i -E "s/^last_updated: .*/last_updated: $CURRENT_DATE/" "$file"
       else
         # Insert 'last_updated' just before the closing "---"
         awk -v date="$CURRENT_DATE" '
