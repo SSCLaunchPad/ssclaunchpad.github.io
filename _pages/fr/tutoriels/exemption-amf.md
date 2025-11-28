@@ -3,6 +3,8 @@ title: Configuration de l'authentification multifacteur (exempté)
 altLangPrefix: mfa-exemption
 description: Configuration de l'authentification multifacteur (exempté)
 tags: [amf, securite]
+#draft: false
+last_updated: 2025-11-28T21:49:56Z
 ---
 
 ### Introduction

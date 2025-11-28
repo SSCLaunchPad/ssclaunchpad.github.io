@@ -3,6 +3,8 @@ title: AWS - Get Connected
 #altLangPrefix: aws-???
 description: How to get connected to LaunchPad AWS
 tags: [aws, tutorial, cli]
+#draft: false
+last_updated: 2025-11-28T21:49:56Z
 ---
 # Getting Connected to AWS
 

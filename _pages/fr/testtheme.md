@@ -1,18 +1,12 @@
 ---
 altLangPrefix: themetest
-contentTitle: Page test de theme Jekyll
-description:
-  en: "Get quick, easy access to all Government of Canada services and information."
-  fr: "Accédez rapidement et facilement à tous les services et renseignements du gouvernement du Canada."
-#layout: page
-layout: default
+description: Accédez rapidement et facilement à tous les services et renseignements du gouvernement du Canada.
 pageclass: wb-prettify all-pre
-subject:
-  en: [Government and Politics, Government services]
-  fr: [Gouvernement et vie politique, Services gouvernementaux]
+subject: Gouvernement et vie politique, Services gouvernementaux
 title: Page Test de Theme
 skipPageBreadcrumb: true
 draft: true
+last_updated: 2025-11-28T21:49:56Z
 ---
 
 # {{ page.contentTitle }}

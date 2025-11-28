@@ -3,6 +3,8 @@ title: AWS - Application / IAM Roles
 #altLangPrefix: aws-???
 description: All about AWS IAM Roles
 tags: [aws, tutorial, iam, boundary-policy]
+draft: true
+last_updated: 2025-11-28T21:49:56Z
 ---
 
 Our clients are allowed to create custom application roles / IAM roles, but to prevent privilege escalation, a permission boundary called `SSCCustomRoleBoundaryPolicy` is required.  The combination of Permission Boundaries and Service Control Policies is an advanced feature that limits the maximum permissions that a role can grant to an IAM entity. An entity's permissions boundary allows it to perform only the actions that are allowed by both its identity-based policies and its permissions boundaries.  

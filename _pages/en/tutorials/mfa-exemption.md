@@ -3,6 +3,8 @@ title: Exempted Multi-Factor Authentication Setup
 altLangPrefix: tutoriels/exemption-amf
 description: How to get connected to LaunchPad AWS
 tags: [mfa, security]
+#draft: false
+last_updated: 2025-11-28T21:49:56Z
 ---
 
 ### Introduction

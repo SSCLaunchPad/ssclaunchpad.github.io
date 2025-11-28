@@ -1,8 +1,9 @@
 ---
-altLangPrefix: tutoriels/foobar
-description: Testing things out
-title: WSL Certificates
+altLangPrefix: tutorials/adding-certificates-wsl
+description: On fait des tests
+title: Certificats sur WSL
 draft: true
+last_updated: 2025-11-28T21:49:56Z
 ---
 
 ## Adding Certificates to Trusted Store on WSL

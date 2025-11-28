@@ -2,7 +2,8 @@
 altLangPrefix: autre-page
 description: This is just another page
 title: Another page
-last_updated: 2025-11-26T21:43:11Z
+#draft: false
+last_updated: 2025-11-28T21:49:56Z
 ---
 
 ## Welcome to another page
