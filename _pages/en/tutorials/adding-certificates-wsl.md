@@ -2,22 +2,24 @@
 altLangPrefix: tutoriels/ajouter-certificats-wsl
 description: Testing things out
 title: WSL Certificates
+contentTitle: Adding Certificates to Trusted Store on WSL
 draft: true
+last_updated: 2025-11-28T21:57:53Z
 ---
 
 ## Adding Certificates to Trusted Store on WSL
 
 When working in the office, some sites have traffic inspection done via transparent TLS bridging (effectively a MitM). On Windows this is fine, because the certificates used to re-encrypt the traffic are automatically added to our trusted root store via policies.
 
-In WSL, that doesn't work, and *curl* and other tools fail due to an un-trusted certificate in the chain. 
+In WSL, that doesn't work, and `curl` and other tools fail due to an un-trusted certificate in the chain. 
 
-We could simply use the `-k` switch for *curl*, which disables certificate validation, but the better approach would be to fix the underlying issue by adding the untrusted certificate (which is probably self-signed) to your store.
+We could simply use the `-k` switch for `curl`, which disables certificate validation, but the better approach would be to fix the underlying issue by adding the untrusted certificate (which is probably self-signed) to your store.
 
 ### 1.  Determine which certificate is failing validation
 
 This can be a little complicated, and requires a bit of spelunking into the verbose output of things like `curl`, `openssl`, or the use of a handy tool called [`crip`](https://github.com/Hakky54/certificate-ripper).
 
-This is the output of trying to access *https://logdy.dev/install.sh*:
+This is the verbose output of trying to access *https://logdy.dev/install.sh* with `curl`:
 ```shell
 $ curl -vv https://logdy.dev/install.sh | sh
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -53,7 +55,7 @@ establish a secure connection to it. To learn more about this situation and
 how to fix it, please visit the web page mentioned above.
 ```
 
-You can see the error message on line 27, however it doesn't tell you which certificate in the chain is self-signed.
+You can see the error message near the bottom (`curl: (60) SSL certificate problem: self-signed certificate in certificate chain`), however it doesn't tell you which certificate in the chain is self-signed.
 
 If we use `crip` to show the certificate chain, we can see more details about the subject and issuer of each one (certificate contents snipped for brevity):
 
@@ -106,7 +108,7 @@ Looking at the output, you can see it's clearly the last one that's self-signed 
 
 ### 2.  Download that cert
 
-Using *crip*, we can easily download all the certificates in the chain:
+Using `crip`, we can easily download all the certificates in the chain:
 ```shell
 $ crip export pem  -u=https://logdy.dev
 
@@ -120,27 +122,26 @@ Certificate ripper statistics:
          [cn=goc-gdc-root-a_o=gc_c=ca]
 
 Extracted 4 certificates.
-It has been exported to /home/greg
+It has been exported to /home/azureuser
 ```
 
-This will produce 4 files, called:
-```shell
-cn=goc-gdc-issuing-a1a_o=gc_c=ca.crt
-cn=goc-gdc-root-a_o=gc_c=ca.crt
-cn=logdydev.crt
-cn=pspc-ssc-fg-ssl-proxy_o=pspc-ssc_l=ottawa_st=ontario_c=ca.crt
-```
+This particular situation producse 4 files, called:
+- `cn=goc-gdc-issuing-a1a_o=gc_c=ca.crt`
+- `cn=goc-gdc-root-a_o=gc_c=ca.crt`
+- `cn=logdydev.crt`
+- `cn=pspc-ssc-fg-ssl-proxy_o=pspc-ssc_l=ottawa_st=ontario_c=ca.crt`
+
 
 ### 3.  Add Certificate to the correct folder
 
-On Ubuntu and Debian, you place new/custom Certificate Authority (CA) certificates in `/usr/local/share/ca-certificates`, in order for the next step to use them.
+On Ubuntu and Debian, Certificate Authority (CA) certificates must be placed in `/usr/local/share/ca-certificates`, in order for the next step to use them.
 
-This is a protected folder, so you'll need to use *sudo*:
+This is a protected folder, so you'll need to use `sudo`:
 ```shell
 sudo mv 'cn=goc-gdc-issuing-a1a_o=gc_c=ca.crt' /usr/local/share/ca-certificates/
 ```
 
-On AlmaLinux, Rocky Linux, and RHEL clones, you place them in `/etc/pki/ca-trust/source/anchors`.
+On AlmaLinux, Rocky Linux, and other RHEL clones, you place them in `/etc/pki/ca-trust/source/anchors`.
 
 
 ### 4.  Update your OS trusted certificate store
